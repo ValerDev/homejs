@@ -1,3 +1,4 @@
+//1.
 class Author  {
     constructor (name,email,gender){
     this._name = name;
@@ -68,3 +69,21 @@ toString(){
     return `This book title is ${this.title}, the autor is: ${this.autor},price is: ${this.price}, quantity is:${this.quantity}`;
 }
 }
+let a = new author("Anun","@gmail.com","male");
+let b = new Book("vernagir",autor= a,3000,11);
+
+
+//2.
+
+
+
+
+
+
+
+
+
+
+
+
+
