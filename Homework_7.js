@@ -74,7 +74,68 @@ let b = new Book("vernagir",autor= a,3000,11);
 
 
 //2.
+class Account{
+	constructor(id, name, balance){
+		this._id = id;
+		this._name = name;
+		this._balance = balance;
+    }
+    get name(){
+		return this._name;
+	}
+	get balance(){
+		return this._balance;
+	}
+	set name(n){
+		this._name = n;
+	}
+	set balance(value){
+		this._balance = value;
+	}
+	credit(amount){
+		this.balance += amount; 
+		 return `Balance: ${this.balance}`;
+	}
+	debit(amount){
+		if(amount < this.balance){
+			 this.balance -= amount;
+     return `Balance: ${this.balance}`;
+		}
+        return `Amount exceeded balance`;
+		
+	}
+	transferTo(anoterAccount = new Account() , amount){
+		if(amount > this.balance){
+			return "Amount exceeded balance."
+		}
+        else
+        {
+			return `anoterAcaunt balance is: ${anoterAccount.balance += amount} , myAccount balance is: ${this.balance -= amount}`;
+			
+			return this.balance;
+		}
+	}
+	static identifAccounts(accountFirst, accountSecond){
+		if(accountFirst.balance === accountSecond.balance && accountFirst.id === accountSecond.id && accountFirst.name === accountSecond.name ){
+		return "There are same";
+		}
+        else
+        {
+		return "There are not same";
+		}	
+	}
+	
+	toString(){
+		return `Acconut name is: ${this.name}, ID is ${this.id}, balance is: ${this.balance} `;
+	}
 
+}
+//transferTo
+/*let a = new Account('32431','name1',215000)
+let g = new Account ('1515','Artur',15000)
+g.transferTo(anoterAccount = a,1000)*/
+
+//3.
 
 
 
