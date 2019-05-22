@@ -72,6 +72,7 @@ toString(){
 let a = new author("Anun","@gmail.com","male");
 let b = new Book("vernagir",autor= a,3000,11);
 
+                             /*****************************************************************/
 
 //2.
 class Account{
@@ -135,7 +136,117 @@ class Account{
 let g = new Account ('1515','Artur',15000)
 g.transferTo(anoterAccount = a,1000)*/
 
-//3.
+                         /*****************************************************************/
+
+//3. 
+  class Person{
+	constructor(firstName, lastName, gender, age){
+		this._firstName = firstName;
+		this._lastName = lastName;
+		this._gender = gender;
+		this._age = age;
+	}
+    get firstName(){
+        return `${this._firstName}`;
+    }
+	get lastName(){
+		return `${this._lastName}`;
+	}
+	get gender(){
+		return `${this._gender}`;
+	}
+	get age(){
+		return `${this._age}`;
+	}
+	set firstName(name){
+		this._firstName = name;
+	}
+	set lastName(lastName){
+		this._lastName = lastName;
+	}
+	set gender(gender){
+		this._gender = gender;
+	}
+	set age(age){
+		this._age = age;
+	}
+	toString(){
+	return `This person name is: ${this.fistName},last name is: ${this.lastName},gender is:${this.gender},age: ${this.age}`;
+	}
+	
+}
+class Student extends Person{
+	constructor(firstName,lastName, gender, age,programs, year, fee){
+	super(firstName, lastName, gender, age);
+		this.programs = programs;
+		this. year =  year;
+		this.fee = fee;
+	}
+    get programs(){
+        return this._programs;
+    }
+	get year(){
+		return this._year;
+	}
+	get quantity(){
+		return `${this._quantity}`;
+	}
+	get fee(){
+		return this._fee;
+	}
+	set programs(strArr){
+		this._programs = strArr;
+	}
+	set year(value){
+		this._year = value;
+	}
+	set fee(value){
+	this._fee = value;
+	}
+	
+	passExam(program,grade){
+if(this.programs.indexOf(program)=== -1){
+		return 'Error: Invalid program';
+	}
+		for(let i = 0; i < this.programs.length; i++){
+			if(this.programs[i]==program)
+				if(grade >= 50){
+				this.programs[i]=[this.programs[i],'pass'];	
+				break;			
+				}
+		}
+		let res =this.programs.filter(a => a[1]==='pass' )
+		if(res.length === this.programs.length){
+		this.year++;
+	}
+	}
+	toString(){
+	return `This student name is: ${this.name},lastname is:${this.lastname},age: ${this.age}`;
+	}
+	
+}
+class Teacher extends Person{
+	constructor( firstName, lastName, gender, age, program, pay){
+		super(firstName, lastName, gender, age);
+		this._program = program
+		this._pay = pay;
+	}
+	get program(){
+		return `${this._program}`;
+	}
+	get pay(){
+		return this._pay;
+	}
+	set program(programeName){
+		this._program = programeName;
+	}
+	set pay(value){
+		this._pay = value;
+	}
+	toString(){
+		return `${this.name} is ${this.program}'s teacher`;
+	}
+}
 
 
 
